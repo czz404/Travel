@@ -1,0 +1,1259 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+/* cyrillic-ext */
+
+/* cyrillic */
+
+/* greek-ext */
+
+/* greek */
+
+/* vietnamese */
+
+/* latin-ext */
+
+/* latin */
+
+@font-face {
+    font-family: 'Source Han SerifCN';
+    src: local('Source Han SerifCN Bold'), local('SourceHanSerifCN-Bold'), url('file:///C://Users//23240//AppData//Roaming//Typora/themes/zj/SourceHanSerifCN-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}@import '';
+:root {
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
+    --select-text-bg-color: #ffafa3;
+    --active-file-text-color: #262626;
+    --active-file-border-color: #f22f27;
+    /* --active-file-bg-color: #fff3f0; */
+    --primary-color: #f22f27;
+    /* 中性色 */
+    --mid-1: #ffffff;
+    --mid-2: #fafafa;
+    --mid-3: #f5f5f5;
+    --mid-4: #f0f0f0;
+    --mid-5: #d9d9d9;
+    --mid-6: #bfbfbf;
+    --mid-7: #8c8c8c;
+    --mid-8: #595959;
+    --mid-9: #434343;
+    --mid-10: #262626;
+    --mid-11: #1f1f1f;
+    --mid-12: #141414;
+    --mid-13: #000000;
+    /* 主题色 */
+    --main-1: #fff3f0;
+    --main-2: #ffd4cc;
+    --main-3: #ffafa3;
+    --main-4: #ff887a;
+    --main-5: #ff5d52;
+    --main-6: #f22f27;
+    --main-7: #cc1616;
+    --main-8: #a60a0f;
+    --main-9: #80010a;
+    --main-10: #590009;
+}
+
+html {
+    font-size: 17px;
+}
+
+body {
+    font-family: "Vollkorn", Palatino, Times;
+    /* font-family: 'Source Han SerifCN', Georgia, Times, 'SimSun', serif!important; */
+    color: var(--mid-13);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 160px;
+
+    /* background-image: linear-gradient(90deg, rgba(50, 0, 0, .04) 2%, transparent 0), linear-gradient(1turn, rgba(50, 0, 0, .04) 2%, transparent 0); */
+    /* background-size: 1em 1em; */
+
+    background-image: linear-gradient(90deg, rgba(60, 10, 30, .04) 3%, transparent 0), linear-gradient(1turn, rgba(60, 10, 30, .04) 3%, transparent 0);
+    background-size: 20px 20px;
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+#write p {
+    line-height: 1.8rem;
+    word-spacing: .05rem;
+    /* color: #3f3f3f; */
+    color: var(--mid-13);
+}
+
+
+/* #write ol li {
+    padding-left: 0.5rem;
+} */
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+body>*:first-child {
+    margin-top: 0 !important;
+}
+
+body>*:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+/* a {
+    color: var(--main-6);
+    font-weight: 500;
+    padding: 0 2px;
+    text-decoration: none;
+} */
+
+a {
+    color: blue;
+    font-weight: 500;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+
+/* 链接 */
+
+
+/* #write a {
+    border-bottom: 1px solid var(--main-6);
+    color: var(--main-6);
+    text-decoration: none;
+} */
+
+#write a {
+    border-bottom: 1px solid blue;
+    color: blue;
+    text-decoration: none;
+}
+
+
+/* 目录 */
+
+#write a.md-toc-inner {
+    line-height: 1.6;
+    white-space: pre-line;
+    border-bottom: none;
+}
+
+#write a:hover {
+    border-bottom: 2px solid var(--main-6);
+    color: var(--main-7);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit !important;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit !important;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit !important;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit !important;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit !important;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit !important;
+}
+
+h2 a,
+h3 a {
+    color: #34495e;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 0.3em;
+    font-size: 2.2em;
+    line-height: 1.2;
+    margin: 2.4em auto 1.2em;
+    color: var(--main-10);
+}
+
+h1:after {
+    content: '';
+    display: block;
+    margin: 0.2em auto 0;
+    width: 100px;
+    height: 2px;
+    border-bottom: 2px solid var(--main-6);
+}
+
+h2 {
+    /*margin: 2em auto 1.4em;*/
+    /* padding-left: 10px; */
+    /* display:inline-block; */
+    line-height: 1.4;
+    font-size: 1.8em;
+    /* border-left: 9px solid var(--main-6); */
+    /* border-bottom: 1px solid #ddd; */
+    border-bottom: 1px solid var(--main-6);
+
+    /* 本来是要加斜条纹的,不太好看,放弃了 */
+    /* background: linear-gradient(45deg,
+            rgba(242, 47, 39, .05) 0, rgba(242, 47, 39, .05) 25%, transparent 25%, transparent 50%,
+            rgba(242, 47, 39, .05) 50%, rgba(242, 47, 39, .05) 75%, transparent 75%, transparent);
+    background-size: 20px 20px; */
+}
+
+h2::before {
+    content: '# '!important;
+    color: #f22f27;
+}
+
+h3 {
+    font-size: 1.4em;
+    line-height: 1.43;
+    /*margin: 1.6em auto 1.2em;*/
+    padding-left: 9px;
+    border-left: 5px solid #f22f27;
+}
+
+
+/* 三级四级标题点击后左边的提示图标 */
+
+#write>h3.md-focus:before,
+#write>h4.md-focus:before {
+    width: auto;
+    height: auto;
+    background-color: var(--main-5);
+    color: var(--mid-1);
+}
+
+h4 {
+    /*margin-top: 1.3em;*/
+    font-size: 1.2em;
+    padding-left: 6px;
+    padding-right: 6px;
+    display: inline-block;
+    border: 1px solid var(--main-6);
+    border-top: 4px solid var(--main-6);
+}
+
+#write h5::before,
+#write h6::before {
+    position: absolute;
+    right: calc(100% + .75em);
+    top: 0;
+    color: #5b5b5b;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-variant: 'small-caps';
+    white-space: nowrap;
+    /* 文本强制不换行 */
+    border: 0;
+}
+
+#write h5 {
+    /* margin-left: 2em; */
+    font-size: 1rem;
+}
+
+#write h6 {
+    /* margin-left: 2.5em; */
+    font-size: 1rem;
+}
+
+#write h5::before {
+    content: 'H5';
+    top: 0.18rem;
+}
+
+#write h6::before {
+    content: 'H6';
+    top: 0.18rem;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+body>h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child+h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h3:first-child,
+body>h4:first-child,
+body>h5:first-child,
+body>h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+#write ol,
+#write ul {
+    padding-left: 25px;
+    margin: .5rem 0;
+}
+
+#write ol>li,
+#write ul>li {
+    color: #db4d52;
+    font-weight: bold;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    color: #333;
+    font-weight: normal;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+    padding-left: .25rem;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+blockquote {
+    border-left: 4px solid rgb(239, 112, 96);
+    padding: 10px 15px;
+    color: #3f3f3f;
+    background-color: #fff9f9;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid var(--main-6);
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: var(--mid-2);
+}
+
+table tbody tr:nth-child(2n-1) {
+    background-color: var(--mid-1);
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid var(--main-6);
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid var(--main-6);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+#write strong {
+    padding: 0.1em;
+    color: #dc3545;
+}
+
+#write em {
+    padding: 0 2px 0 2px;
+    font-style: normal;
+    color: #ff3502;
+    /* color: #595959;
+    background: #F6EEFF; */
+}
+
+
+/* 数学公式变蓝 */
+
+[md-inline='inline_math'] {
+    color: blue;
+    font-size: 100%;
+}
+
+
+/* 表格第一行 */
+
+
+/* #write table thead th {
+    background-color: var(--main-7);
+    color: #f8f8f8;
+} */
+
+
+/* 行号左框线 */
+
+#write .CodeMirror-gutters {
+    border-right: 1px solid rgba(204, 51, 0);
+}
+
+
+/* 代码框 */
+
+#write .md-fences {
+    border: 1px solid #7a7a7a;
+    -webkit-font-smoothing: initial;
+    /*margin: 2rem 0 !important;*/
+    /* padding: 0.3rem 0 !important; */
+    padding: 3px 5px;
+    line-height: 1.55rem;
+    border-radius: 2px;
+    font-family: 'Roboto Mono', 'Source Sans Pro', 'Microsoft YaHei', '微软雅黑' !important;
+    font-size: 0.9rem;
+    word-wrap: normal;
+
+    background: none;
+}
+
+#write [mdtype="math_block"] {
+    font-size: 1.2rem;
+}
+
+#write .CodeMirror-wrap .CodeMirror-code pre {
+    padding-left: 12px;
+    line-height: 1.55rem;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+    /*width: 3ch !important;*/
+    color: rgba(128, 128, 255, 0.8);
+}
+
+#write .CodeMirror-cursors .CodeMirror-cursor {
+    border-left: 2px solid var(--main-4);
+}
+
+
+/* 行间代码 */
+
+#write code,
+tt {
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: 'Source Code Pro', Roboto Mono, Source Sans Pro, 'Microsoft YaHei', '微软雅黑' !important;
+    font-size: 0.92rem;
+    color: #ff3502;
+    background-color: #f8f5ec;
+    /* color: #c7254e;
+    background-color: #f9f2f4;  */
+}
+
+tt {
+    margin: 0 2px;
+}
+
+#write .md-footnote {
+    background-color: #f8f8f8;
+    color: #e96900;
+}
+
+
+/* 流程图块 */
+
+#write .md-diagram-panel {
+    position: relative;
+    margin: 24px auto;
+}
+
+#write .md-focus .md-diagram-panel {
+    border: 1px solid var(--main-4);
+    border-radius: 4px;
+}
+
+
+/* heighlight. */
+
+#write mark {
+    background-color: #EBFFEB;
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: #222;
+    font-weight: 500;
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+
+/* 任务列表小方框 */
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-task-list-item>input:before {
+    content: '';
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--mid-1);
+    border-radius: 2px;
+    border: 1px solid var(--main-4);
+    margin-top: -0.4rem;
+    transition: all 0.2s linear;
+}
+
+.md-task-list-item>input:checked:before,
+.md-task-list-item>input[checked]:before {
+    content: '\2714';
+    font-size: 0.625rem;
+    color: var(--mid-1);
+    border: 1px solid var(--main-6);
+    background-color: var(--main-6);
+}
+
+
+/* @media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+} */
+
+
+/* .md-fences {
+    background-color: #f8f8f8;
+} */
+
+#write pre.md-meta-block {
+    /* padding: 1rem; */
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+    /* bottom: .575rem; */
+}
+
+#write>h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write>h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+
+/*--- 图片 ---*/
+
+.md-image {
+    /*margin: 24px auto;*/
+    border-radius: 4px;
+}
+
+.md-image img {
+    border-radius: 4px;
+}
+
+
+/* 当 “![shadow-随便写]()”写时，会有阴影 */
+
+.md-image img[alt|='shadow'] {
+    /* box-shadow: 0 4px 24px -6px #ddd; */
+    box-shadow: #84A1A8 0px 10px 15px;
+}
+
+.md-image>.md-meta {
+    border-radius: 3px;
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+}
+
+#typora-sidebar {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 1)), url("file:///C://Users//23240//AppData//Roaming//Typora/themes/zj/cubes.png");
+}
+
+#typora-sidebar .sidebar-footer {
+    background: none;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #e6f0fe;
+}
+
+
+/* 侧边栏 */
+
+.file-list-item.active {
+    background: var(--active-file-bg-color);
+    color: var(--active-file-text-color);
+    border-left: 4px solid var(--main-6);
+}
+
+.file-tree-node.active>.file-node-background {
+    background-color: var(--active-file-bg-color);
+    border-left: 4px solid var(--main-6);
+    border-color: var(--active-file-border-color);
+}
+
+@media print {
+    .typora-export * {
+        -webkit-print-color-adjust: exact;
+    }
+    html {
+        font-size: 16px!important;
+    }
+    body {
+        /* font-family: 'Source Han SerifCN', Georgia, Times, 'SimSun', serif!important; */
+        /* font-size: 16px!important; */
+        font-family: Times, 'SimSun', serif!important;
+        color: #000000!important;
+    }
+    p {
+        color: #000000!important;
+    }
+    a {
+        color: blue!important;
+        /* border-bottom: 1px solid blue!important; */
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+/*标题1居中*/
+#write h1 {
+  text-align: center;
+  column-span: all;
+}
+/*正文*/
+#write {
+  font-family: "宋体";
+}
+
+/*目录隐藏标题1*/
+.md-toc-h1 {
+  display: none;
+}
+
+ .plugin-callout {
+    background-color: var(--callout-bg-color);
+    border-left: 4px solid var(--callout-left-line-color);
+    padding: 10px 10px 10px 15px;
+    box-shadow: 0 0.2rem 0.5rem #0000000d, 0 0 0.05rem #0000001a;
+    overflow: hidden;
+}
+
+.plugin-callout[callout-type] {
+    --callout-bg-color: #fafafa;
+    --callout-left-line-color: #777777;
+    
+}
+
+.plugin-callout > p:first-child {
+    margin: -10px -10px -10px -15px;
+    padding: 10px 10px 10px 15px;
+    letter-spacing: 1px;
+}
+
+.plugin-callout > p:first-child::before {
+    font-family: FontAwesome;
+    content: var(--callout-icon);
+    margin-right: 0.5em;
+}
+
+.callout-folded > p:first-child :not(:first-child) { display: none; }
+.callout-folded > p:not(:first-child) { display: none; }
+
+.callout-folded:has(.md-focus) :not(:first-child):not(.md-softbreak) { display: inherit !important; }
+.callout-folded:hover :not(:first-child):not(.md-softbreak) { display: inherit !important; }
+.plugin-callout > p:first-child span:first-child { color: var(--callout-left-line-color); }
+               .plugin-callout > p:first-child::before { color: var(--callout-left-line-color); }
+.plugin-callout[callout-type="tip"] {
+                --callout-bg-color: #d8f2e5;
+                --callout-left-line-color: #3abd7e;
+                
+            }
+.plugin-callout[callout-type="bug"] {
+                --callout-bg-color: #feeed3;
+                --callout-left-line-color: #E0AC00;
+                
+            }
+.plugin-callout[callout-type="info"] {
+                --callout-bg-color: #dff6dd;
+                --callout-left-line-color: #3abd7e;
+                
+            }
+.plugin-callout[callout-type="note"] {
+                --callout-bg-color: #e1d1eb;
+                --callout-left-line-color: #6a1b9a;
+                
+            }
+.plugin-callout[callout-type="quote"] {
+                --callout-bg-color: #fafafa;
+                --callout-left-line-color: #777777;
+                
+            }
+.plugin-callout[callout-type="example"] {
+                --callout-bg-color: #f1edfd;
+                --callout-left-line-color: #777777;
+                
+            }
+.plugin-callout[callout-type="caution"] {
+                --callout-bg-color: #fde7e9;
+                --callout-left-line-color: #c62828;
+                
+            }
+.plugin-callout[callout-type="failure"] {
+                --callout-bg-color: #f4d4d4;
+                --callout-left-line-color: #c62828;
+                
+            }
+.plugin-callout[callout-type="warning"] {
+                --callout-bg-color: #feeed3;
+                --callout-left-line-color: #E0AC00;
+                
+            }
+.plugin-callout[callout-type="success"] {
+                --callout-bg-color: #d8f2e5;
+                --callout-left-line-color: #3abd7e;
+                
+            }
+.plugin-callout[callout-type="question"] {
+                --callout-bg-color: #fff4ce;
+                --callout-left-line-color: #E0AC00;
+                
+            }
+.plugin-callout[callout-type="abstract"] {
+                --callout-bg-color: #e5f8f8;
+                --callout-left-line-color: #777777;
+                
+            }
+.plugin-callout[callout-type="important"] {
+                --callout-bg-color: #d8e6f3;
+                --callout-left-line-color: #3b83c1;
+                
+            }
+</style><title>北京游记</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='北京游记'><span>北京游记</span></h1><h2 id='索引'><span>索引</span></h2><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>地点</span></th><th><span>名称</span></th><th><span>评分</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='#王府井天主堂'><span>王府井天主堂</span></a></td><td><span>东城区</span></td><td><span>2</span></td></tr><tr><td style='text-align:center;' ><a href='#王府井百货大楼'><span>王府井百货大楼</span></a></td><td><span>东城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#新华书店'><span>新华书店</span></a></td><td><span>东城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#永盛斋小吃'><span>永盛斋小吃</span></a></td><td><span>东城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#陈独秀故居'><span>陈独秀故居</span></a></td><td><span>东城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#故宫'><span>故宫</span></a></td><td><span>东城区</span></td><td><span>5</span></td></tr><tr><td style='text-align:center;' ><a href='#成都驻京办事处'><span>成都驻京办事处</span></a></td><td><span>东城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#天安门广场'><span>天安门广场</span></a></td><td><span>东城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#国家博物馆'><span>国家博物馆</span></a></td><td><span>东城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#老舍故居'><span>老舍故居</span></a></td><td><span>东城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#北京人艺戏剧博物馆'><span>北京人艺戏剧博物馆</span></a></td><td><span>东城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#史家胡同博物馆'><span>史家胡同博物馆</span></a></td><td><span>东城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#景山公园'><span>景山公园</span></a></td><td><span>西城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#红楼藏书楼'><span>红楼藏书楼</span></a></td><td><span>西城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#万松老人塔'><span>万松老人塔</span></a></td><td><span>西城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#钟书阁'><span>钟书阁</span></a></td><td><span>西城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#地质博物馆'><span>地质博物馆</span></a></td><td><span>西城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#鲁迅博物馆'><span>鲁迅博物馆</span></a></td><td><span>西城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#妙应寺白塔'><span>妙应寺白塔</span></a></td><td><span>西城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#西什库主教堂'><span>西什库主教堂</span></a></td><td><span>西城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#国家大剧院'><span>国家大剧院</span></a></td><td><span>西城区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#北京天文馆'><span>北京天文馆</span></a></td><td><span>西城区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#汽车博物馆'><span>汽车博物馆</span></a></td><td><span>丰台区</span></td><td><span>3</span></td></tr><tr><td style='text-align:center;' ><a href='#消防博物馆'><span>消防博物馆</span></a></td><td><span>丰台区</span></td><td><span>4</span></td></tr><tr><td style='text-align:center;' ><a href='#国家典籍博物馆'><span>国家典籍博物馆</span></a></td><td><span>海淀区</span></td><td><span>5</span></td></tr><tr><td style='text-align:center;' ><a href='#北京石刻艺术博物馆'><span>北京石刻艺术博物馆</span></a></td><td><span>海淀区</span></td><td><span>5</span></td></tr><tr><td style='text-align:center;' ><a href='#南路烧酒博物馆'><span>南路烧酒博物馆</span></a></td><td><span>大兴区</span></td><td><span>3</span></td></tr></tbody></table></figure><h2><span>一月六日</span></h2><p><img src="https://s2.loli.net/2024/01/24/1nuovJrS4sp5mCA.jpg" alt="1.6" style="zoom: 50%;" /></p><h3 id='王府井天主堂'><span>王府井天主堂</span></h3><p><span>评分：🌟🌟2/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>平常是无法进入的，只能在外面看看拍拍照。</span></p></blockquote><p>&nbsp;</p><h3 id='王府井百货大楼'><span>王府井百货大楼</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>地下二层有老北京展览。</span></p></blockquote><p>&nbsp;</p><h3 id='新华书店'><span>新华书店</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>规模比较大的书店。</span></p></blockquote><p>&nbsp;</p><h3 id='永盛斋小吃'><span>永盛斋小吃</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以吃”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>店不大，老板养了蝈蝈，非常“北京”，门钉肉饼味道还不错。</span></p></blockquote><p>&nbsp;</p><h3 id='陈独秀故居'><span>陈独秀故居</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>地方不大，但去了解了解历史挺好。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要预约，但去的人不多，我当天在现场也约到了。</span></p></blockquote><p>&nbsp;</p><h3 id='故宫'><span>故宫</span></h3><p><span>评分：🌟🌟🌟🌟🌟5/5“很值得去”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>门票不贵，里面很大，还有各种临时展厅，自己去转有点容易走不全，可以提前规划下路线。半天时间游览其实有点不够，可以去一整天。在一些展厅里有穿志愿者衣服的免费讲解，讲的很好。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要提前预约！</span></p></blockquote><p>&nbsp;</p><h3 id='成都驻京办事处'><span>成都驻京办事处</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以吃”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>为数不多的离故宫出口和景山公园很近的吃饭地方。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>只有固定时段营业！</span></p></blockquote><p>&nbsp;</p><h3 id='景山公园'><span>景山公园</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>门票不贵，可以到山上俯瞰故宫全景。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>不要天黑了去！晚上故宫只有一个门是亮灯的。</span></p></blockquote><p>&nbsp;</p><h2 id='一月七日'><span>一月七日</span></h2><p><img src="https://s2.loli.net/2024/01/25/rkV3pE7yj8DAKMC.jpg" alt="1.7" style="zoom:50%;" /></p><h3 id='红楼藏书楼'><span>红楼藏书楼</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>挺大的图书馆，有一些质量不错的书。</span></p></blockquote><p>&nbsp;</p><h3 id='万松老人塔'><span>万松老人塔</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>一座古塔，里面也有个小型图书馆，地点就在红楼藏书楼对面。</span></p></blockquote><p>&nbsp;</p><h3 id='钟书阁'><span>钟书阁</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>比较漂亮，但规模不大，只有一部分书可以免费看。</span></p></blockquote><p>&nbsp;</p><h3 id='地质博物馆'><span>地质博物馆</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>规模挺大，有很多可以动手操作的互动性的展物，总体来说不错。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要买票，但这种买票的一般都不用提前预约（除了故宫）。</span></p></blockquote><p>&nbsp;</p><h3 id='鲁迅博物馆'><span>鲁迅博物馆</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>规模挺大，介绍的比较详细。实际上从鲁迅博物馆到西什库教堂这个方向中间还有“历代帝王庙”等等好几个景点，不过当时去的晚了没有去上。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>免费，需要预约。</span></p></blockquote><p>&nbsp;</p><h3 id='妙应寺白塔'><span>妙应寺白塔</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>整体来说还不错，红墙白塔，拍照很好看。里面展厅介绍的也很详细。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要买票，现场购买即可。</span></p></blockquote><p>&nbsp;</p><h3 id='西什库主教堂'><span>西什库主教堂</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>比较漂亮，非常中西结合，普通游客也是不能进入教堂内部的。</span></p></blockquote><p>&nbsp;</p><h2 id='一月十三日'><span>一月十三日</span></h2><p><img src="https://s2.loli.net/2024/01/25/srqjWYamhfBx6ik.jpg" alt="1.13" style="zoom:50%;" /></p><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>这一路线需要准备好身份证，且周末时段比较拥挤。</span></p></blockquote><h3 id='国家大剧院'><span>国家大剧院</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>建筑外部和内部都很精美，演出大部分在晚上，只看里面的展览也不错。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要买票，现场购买即可。戏剧等活动的票务信息可以在微信公众号查看。</span></p></blockquote><p>&nbsp;</p><h3 id='天安门广场'><span>天安门广场</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要预约，值得注意的是在天安门广场外面不进去只走过去也是需要天安门或者天安门附近的国家博物馆等任意一景点的预约。</span></p></blockquote><p>&nbsp;</p><h3 id='国家博物馆'><span>国家博物馆</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要预约，周末等高峰时段进馆就要排超长的队。博物馆里人超多，有免费的志愿者讲解但水平不一，有的志愿者只是在背稿子。因为到处挤满了人所以听讲解的体验也很差，楼上的展厅还有不少文字介绍出现字库问题显示为方块的情况，三星都给多了，体验还不如普通地方的小博物馆。</span></p></blockquote><p>&nbsp;</p><h2 id='一月十四日'><span>一月十四日</span></h2><p><img src="https://s2.loli.net/2024/01/25/JIj8oawYBGO4vF6.jpg" alt="1.14" style="zoom:50%;" /></p><h3 id='北京天文馆'><span>北京天文馆</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>有志愿者进行小范围的讲解，听一听挺不错，但小孩子太多了，很吵。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要买票。附近好像没什么吃饭地方，最好吃完饭再去。旁边还有中国古生物馆，但在装修。</span></p></blockquote><p>&nbsp;</p><h3 id='国家典籍博物馆'><span>国家典籍博物馆</span></h3><p><span>评分：🌟🌟🌟🌟🌟5/5“很值得去”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>无需预约，免费参观。里面和图书馆是连着的，值得一去。</span></p></blockquote><p>&nbsp;</p><h3 id='北京石刻艺术博物馆'><span>北京石刻艺术博物馆</span></h3><p><span>评分：🌟🌟🌟🌟🌟5/5“很值得去”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>有志愿者讲解很不错，金刚宝座塔日落时分很美。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要买票。微信公众号可以看到免费讲解时间安排。</span></p></blockquote><p>&nbsp;</p><h2 id='一月二十日'><span>一月二十日</span></h2><p><img src="https://s2.loli.net/2024/01/25/ExFL4Pok2eKHXDU.jpg" alt="1.20" style="zoom:50%;" /></p><h3 id='汽车博物馆'><span>汽车博物馆</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>可以看到很多国产老车，对汽车感兴趣可以来看看，有志愿者免费讲解。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>需要买票。附近吃饭地方挺多，早餐午餐都有。</span></p></blockquote><p>&nbsp;</p><h3 id='南路烧酒博物馆'><span>南路烧酒博物馆</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>可以看到白酒的生产过程，二锅头的历史等待。可以免费品尝白酒。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>免费参观，无需预约。但交通不太方便，要等公交车。</span></p></blockquote><p>&nbsp;</p><h2 id='一月二十一日'><span>一月二十一日</span></h2><p><img src="https://s2.loli.net/2024/01/25/YOGADHpRtPK7ZFg.jpg" alt="1.21" style="zoom:50%;" /></p><h3 id='老舍故居'><span>老舍故居</span></h3><p><span>评分：🌟🌟🌟3/5“路过可以看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>展馆比较小，介绍的不是很详细。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>免费参观，需要预约。</span></p></blockquote><p>&nbsp;</p><h3 id='北京人艺戏剧博物馆'><span>北京人艺戏剧博物馆</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>展厅面积挺大，介绍的很详细，想了解戏剧艺术可以去参观。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>免费参观，无需预约，上午十点半开门。</span></p></blockquote><p>&nbsp;</p><h3 id='史家胡同博物馆'><span>史家胡同博物馆</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>展厅面积挺大，介绍了在史家胡同居住过的名人们。</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>免费参观，无需预约。微信公众号可以看到免费讲解时间。</span></p></blockquote><p>&nbsp;</p><h3 id='消防博物馆'><span>消防博物馆</span></h3><p><span>评分：🌟🌟🌟🌟4/5“值得看看”</span></p><blockquote class="plugin-callout" callout-type="note"><p><span>[!NOTE]</span>
+<span>展厅面积挺大，可以体验火场逃生、暴风雨、地震……</span></p></blockquote><blockquote class="plugin-callout" callout-type="caution"><p><span>[!CAUTION]</span>
+<span>免费参观，需要预约。注意尽量预约带讲解的，可以体验很多项目。</span></p></blockquote></div></div>
+</body>
+</html>
